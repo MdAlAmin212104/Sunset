@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "image": "https://www.travelandleisure.com/thmb/OdtEHSekDqPEXeG5k2zkp5kqiHo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/soneva-jani-sunset-view-maldives-SONEVA0421-74b37591d80441ce87831a41da518e49.jpg",
+        "title": "Serenity Resort & Spa",
+        "description": "Escape to tranquility at Serenity Resort & Spa. Nestled amidst lush greenery, our resort offers luxurious accommodations, rejuvenating spa treatments, and exquisite dining experiences.",
+        "features": ["Pool", "Spa", "Restaurant"],
+        "destination": "Cityville, State",
+        "distance": "100 km from City Center",
+        "price": "$300 per night",
+        "duration": "3 nights in State"
+    },
+    {
+        "id": 2,
+        "image": "https://www.travelandleisure.com/thmb/Hn1sOjjR0f9XH1wc63ivPTV08XY=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/bellagio-pool-las-vegas-VEGASPOOLS0921-1510d8d661144a1d9873d1e0c4429ef9.jpg",
+        "title": "Golden Shores Beach Resort",
+        "description": "Experience the ultimate beach getaway at Golden Shores Beach Resort. With pristine white sands and crystal-clear waters, our resort offers beachfront villas and a wide range of water sports activities.",
+        "features": ["Beach", "Pool", "Surfing"],
+        "destination": "Beachville, State",
+        "distance": "50 km from Beach Town",
+        "price": "$250 per night",
+        "duration": "2 nights in State"
+    },
+    {
+        "id": 3,
+        "image": "https://www.travelandleisure.com/thmb/o5-yicUwTlp_wy5434EKFARzUm4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ritz-paris-windor-suite-PARISHOTELS0618-5436e26300a24dcf82b67ec63d34324e.jpg",
+        "title": "Mountain Haven Retreat",
+        "description": "Embrace the beauty of nature at Mountain Haven Retreat. Surrounded by majestic mountains, our rustic-chic cabins offer cozy accommodations and access to hiking trails and outdoor adventures.",
+        "features": ["Mountain", "Hiking", "Bonfire"],
+        "destination": "Mountaintop, State",
+        "distance": "20 km from Summit Base",
+        "price": "$200 per night",
+        "duration": "2 nights in State"
+    },
+    {
+        "id": 4,
+        "image": "https://www.travelandleisure.com/thmb/IFM2AKhIIUU0ZFx7cOjRX1KndGs=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/soneva-jani-064-TOPHOTELSWB21-289b90eaef774a1e930ac593368cefc5.jpg",
+        "title": "Tranquil Oasis Resort",
+        "description": "Discover serenity at Tranquil Oasis Resort. Located amidst lush gardens and overlooking a tranquil lake, our resort offers luxurious accommodations, a rejuvenating spa, and gourmet dining.",
+        "features": ["Garden", "Spa", "Dining"],
+        "destination": "Lakeview, State",
+        "distance": "30 km from Lakeside Town",
+        "price": "$280 per night",
+        "duration": "2 nights in State"
+    },
+    {
+        "id": 5,
+        "image": "https://www.travelandleisure.com/thmb/9z1jekisEjPK_Ap1kyr6NMWs3Wg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/one-and-only-gorillas-nest-ITLIST20-a68e6657d489459592cbabb99cc5587f.jpg",
+        "title": "Urban Heights Hotel",
+        "description": "Experience luxury in the heart of the city at Urban Heights Hotel. Our sleek and modern rooms offer panoramic city views, and our rooftop bar is the perfect spot to unwind after a day of exploring.",
+        "features": ["Cityscape", "Bar", "Gym"],
+        "destination": "Downtown, State",
+        "distance": "10 km from City Center",
+        "price": "$350 per night",
+        "duration": "3 nights in State"
+    },
+    {
+        "id": 6,
+        "image": "https://www.travelandleisure.com/thmb/ewnhIgzpak_7aNYfOopRm5eSwHw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/hoolei-grand-wailea-hawaii-MEXPNSVHTLS1221-c0f24fe5b90d49aabfb239d96beb1a10.jpg",
+        "title": "Eco Retreat Lodge",
+        "description": "Immerse yourself in nature at Eco Retreat Lodge. Our eco-friendly cabins are nestled in the heart of a lush rainforest, offering a peaceful retreat with hiking trails, wildlife spotting, and sustainable living experiences.",
+        "features": ["Forest", "Hiking", "Eco"],
+        "destination": "Rainforest, State",
+        "distance": "5 km from Nature Reserve",
+        "price": "$180 per night",
+        "duration": "2 nights in State"
+    }
+]
