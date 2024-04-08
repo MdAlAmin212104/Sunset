@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
       return (
-            <footer className="footer rounded-xl p-10 bg-base-200 text-base-content">
+            <footer className="footer mt-8 rounded-xl p-10 bg-base-200 text-base-content">
                   <aside>
                         <img src='hotel-1880.svg' alt=""  />
                         <p>Sunset Industries Ltd.<br/>Providing reliable tech since 1992</p>
