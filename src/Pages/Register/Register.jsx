@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { IoMdEye } from "react-icons/io";
 import { FaEyeSlash } from "react-icons/fa6";
 
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthProvider } from '../../Provider/Provider';
 
 
 const Register = () => {
       const [showPassword, setShowPassword] = useState(false);
+
+
+      const { createUserInEmail } = useContext(AuthProvider)
 
       const handlePassword = () => {
             setShowPassword(!showPassword);
@@ -17,7 +21,6 @@ const Register = () => {
       const {
             register,
             handleSubmit,
-            watch,
             formState: { errors },
       } = useForm();
 
@@ -28,11 +31,14 @@ const Register = () => {
                   toast.warning('Your password must be at least 6 characters and minimum 2 uppercase letters and 2 lowercase letters');
                   return;
             }
-            //console.log(data)
-            console.log(email, password);
+            
+            createUserInEmail(email, password)
+                  .then(() => toast.success("Congratulation you success to Register!"))
+                  .catch(errors => toast.warn(errors.message))
       }
 
-      //console.log(watch("name"));
+      
+
       return (
             <div className='bg-blue-500 p-8'>
                   <div className="w-full py-5 max-w-md space-y-3 rounded-xl bg-gray-50 text-gray-800 mx-auto">

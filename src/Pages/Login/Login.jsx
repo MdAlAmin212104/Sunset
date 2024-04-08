@@ -1,29 +1,51 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthProvider } from '../../Provider/Provider';
 
 const Login = () => {
+
+      const { userLogIn } = useContext(AuthProvider)
+
+      const { register, handleSubmit, formState: { errors } } = useForm();
+
+      const onSubmit = (data) => {
+            const { password, email } = data;
+            //console.log(password, email);
+            //toast.success('login successful')
+            
+            userLogIn(email, password)
+                  .then(() => toast.success("Congratulation you success to login!"))
+                  .catch(errors => toast.warn(errors.message))
+      }
+
+
       return (
             <div className='bg-blue-500 p-8'>
                   <div className="w-full py-5 max-w-md space-y-3 rounded-xl bg-gray-50 text-gray-800 mx-auto">
                   <h1 className="text-2xl font-bold text-center">Login</h1>
-                  <form className="card-body">
+                  <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
                         <label className="label">
                               <span className="label-text">Email</span>
                         </label>
-                        <input type="email" placeholder="email" className="input input-bordered" required />
-                        </div>
+                        <input type="email" placeholder="email" className="input input-bordered"  {...register("email", { required: true })} />
+                              </div>
+                              {errors.email && <span className='text-red-700'>This field is required</span>}
                         <div className="form-control">
                         <label className="label">
                               <span className="label-text">Password</span>
                         </label>
-                        <input type="password" placeholder="password" className="input input-bordered" required />
+                                    <input type="password" placeholder="password" className="input input-bordered"  {...register("password", { required: true })} />
+                                    {errors.password && <span className='text-red-700'>This field is required</span>}
                         <label className="label">
-                              <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                              <p  className="label-text-alt link link-hover">Forgot password?</p>
                         </label>
                         </div>
                         <div className="form-control mt-6">
-                        <button className="btn btn-primary">Login</button>
+                         <input type="submit" value="Login" className='btn btn-primary'/>
                         </div>
                   </form>
                   <div className="flex items-center pt-4 space-x-1">
@@ -50,7 +72,8 @@ const Login = () => {
                   </div>
                   <p className="text-xs text-center sm:px-6 text-gray-600">Don't have an account?
                         <Link to='/register' rel="noopener noreferrer" className="underline text-green-900 text-[18px]">Sign up</Link>
-                  </p>
+                        </p>
+                        <ToastContainer />
             </div>
             </div>
       );
