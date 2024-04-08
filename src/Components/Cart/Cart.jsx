@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SingleCart from '../singleCart/SingleCart';
+import 'animate.css';
+
 const text = ['The Weekend Break', 'The Package Holiday', 'The Group Tour', 'Long Term Slow Travel'];
 
 const Cart = () => {
@@ -13,7 +15,7 @@ const Cart = () => {
 
       return (
             <div>
-                  <h2 className="text-5xl text-bold text-center my-4">Recommended destination</h2>
+                  <h2 className="text-5xl text-bold text-center my-4 animate__animated animate__heartBeat">Recommended destination</h2>
                   <ul className='text-center md:flex lg:flex justify-around my-8'>
                         {text.map((item, idx) => <li className='text-2xl text-bold' key={idx}>{item}</li>)}
                   </ul>

@@ -5,6 +5,8 @@ import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import Error from "../Components/Error/Error";
 import SingleInfo from "../Pages/SingleInfo/SingleInfo";
+import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
 
 
 
@@ -30,6 +32,14 @@ export const router = createBrowserRouter([
                         path: '/card/:id',
                         element: <SingleInfo />,
                         loader: () => fetch('/hotel.json')
+                  },
+                  {
+                        path: '/login',
+                        element: <Login/>
+                  },
+                  {
+                        path: '/register',
+                        element: <Register/>
                   }
                   
                   
