@@ -1,8 +1,13 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
       return (
-            <section className="py-6 my-8 rounded-lg bg-gray-200 text-gray-900">
+            <div>
+                  <Helmet>
+                        <title>Sunset || contact</title>
+                  </Helmet>
+                  <section className="py-6 my-8 rounded-lg bg-gray-200 text-gray-900">
                   <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
                         <div className="py-6 md:py-6 md:px-6">
                               <h1 className="text-4xl font-bold">Get in touch</h1>
@@ -46,6 +51,7 @@ const Contact = () => {
                         </form>
                   </div>
             </section>
+            </div>
       );
 };
 

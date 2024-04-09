@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 
 import { AuthProvider } from '../../Provider/Provider';
+import { Helmet } from 'react-helmet-async';
 
 
 
@@ -32,7 +33,11 @@ const UpdateProfile = () => {
 
 
       return (
-            <div className='bg-blue-500 p-8'>
+            <div>
+                  <Helmet>
+                        <title>Sunset || profileUpdate</title>
+                  </Helmet>
+                  <div className='bg-blue-500 p-8'>
                   <div className="w-full py-5 max-w-md space-y-3 rounded-xl bg-gray-50 text-gray-800 mx-auto">
                         <h1 className="text-2xl font-bold text-center">ProfileUpdate</h1>
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -58,6 +63,7 @@ const UpdateProfile = () => {
                         </form>
                         
                   </div>
+            </div>
             </div>
       );
 };

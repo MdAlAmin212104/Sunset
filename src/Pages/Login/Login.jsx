@@ -6,6 +6,7 @@ import { FaEyeSlash } from "react-icons/fa6";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from '../../Provider/Provider';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
       const [showPassword, setShowPassword] = useState(false);
@@ -46,7 +47,11 @@ const Login = () => {
 
 
       return (
-            <div className='bg-blue-500 p-8'>
+            <div>
+                  <Helmet>
+                        <title>Sunset || Login</title>
+                  </Helmet>
+                  <div className='bg-blue-500 p-8'>
                   <div className="w-full py-5 max-w-md space-y-3 rounded-xl bg-gray-50 text-gray-800 mx-auto">
                   <h1 className="text-2xl font-bold text-center">Login</h1>
                   <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -98,6 +103,7 @@ const Login = () => {
                         <Link to='/register' rel="noopener noreferrer" className="underline text-green-900 text-[18px]">Sign up</Link>
                         </p>
                         <ToastContainer />
+            </div>
             </div>
             </div>
       );
