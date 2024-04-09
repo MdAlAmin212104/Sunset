@@ -4,14 +4,23 @@ import { AuthProvider } from '../../Provider/Provider';
 
 const Navbar = () => {
 
-      const user = useContext(AuthProvider)
-      console.log(user.name);
+      const {user, logOut} = useContext(AuthProvider)
+      console.log(user);
+
+      const handleLogOut = () => {
+            logOut();
+      }
 
 
       const links = <>
             <li><NavLink to='/'>Home</NavLink></li>
             <li><NavLink to='/about'>About</NavLink></li>
-            <li><NavLink to='/contact'>Contact</NavLink></li>
+            <li><NavLink to='/services'>Services</NavLink></li>
+            <li><NavLink to='/blog'>Blog</NavLink></li>
+            
+            {
+                  user && <li><NavLink to='/contact'>Contact</NavLink></li>
+            }
       </>
 
       return (
@@ -32,8 +41,24 @@ const Navbar = () => {
                               {links}
                         </ul>
                   </div>
-                  <div className="navbar-end">
-                        <Link to='/login' className="btn">Login</Link>
+                  <div className="navbar-end z-50">
+                        {
+                              user ?  <div className="dropdown dropdown-end">
+                                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                    <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                    </div>
+                                    </div>
+                                    <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                                    <li> <a> Profile </a></li>
+                                    <li><a>Settings</a></li>
+                                    <li><a onClick={handleLogOut}>Logout</a></li>
+                                    </ul>
+                              </div>
+                              :
+                                    <Link to='/login' className="btn">Login</Link>
+                        }
+                  
                   </div>
             </div>
       );

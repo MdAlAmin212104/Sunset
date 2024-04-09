@@ -1,20 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
+import { IoMdEye } from "react-icons/io";
+import { FaEyeSlash } from "react-icons/fa6";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from '../../Provider/Provider';
 
 const Login = () => {
+      const [showPassword, setShowPassword] = useState(false);
 
       const { userLogIn } = useContext(AuthProvider)
 
       const { register, handleSubmit, formState: { errors } } = useForm();
 
+      const handlePassword = () => {
+            setShowPassword(!showPassword);
+      }
       const onSubmit = (data) => {
             const { password, email } = data;
-            //console.log(password, email);
-            //toast.success('login successful')
             
             userLogIn(email, password)
                   .then(() => toast.success("Congratulation you success to login!"))
@@ -34,15 +38,20 @@ const Login = () => {
                         <input type="email" placeholder="email" className="input input-bordered"  {...register("email", { required: true })} />
                               </div>
                               {errors.email && <span className='text-red-700'>This field is required</span>}
-                        <div className="form-control">
-                        <label className="label">
-                              <span className="label-text">Password</span>
-                        </label>
-                                    <input type="password" placeholder="password" className="input input-bordered"  {...register("password", { required: true })} />
-                                    {errors.password && <span className='text-red-700'>This field is required</span>}
-                        <label className="label">
-                              <p  className="label-text-alt link link-hover">Forgot password?</p>
-                        </label>
+                        <div className="form-control relative">
+                              <label className="label">
+                                    <span className="label-text">Password</span>
+                              </label>
+                              <input type={showPassword? 'text': 'password'} placeholder="password" className="input input-bordered"  {...register("password", { required: true })} />
+                              {
+                                    (showPassword) ?
+                                    <FaEyeSlash onClick={handlePassword} className='absolute top-14 right-4' /> :
+                                    <IoMdEye onClick={handlePassword} className='absolute top-14 right-4' />
+                              }          
+                              {errors.password && <span className='text-red-700'>This field is required</span>}
+                              <label className="label">
+                                    <p  className="label-text-alt link link-hover">Forgot password?</p>
+                              </label>
                         </div>
                         <div className="form-control mt-6">
                          <input type="submit" value="Login" className='btn btn-primary'/>
