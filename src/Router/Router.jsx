@@ -9,6 +9,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Services from "../Pages/Servicess/Servicess";
 import Blog from "../Pages/Blog/Blog";
+import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 
 
 
@@ -50,6 +51,11 @@ export const router = createBrowserRouter([
                   {
                         path: '/blog',
                         element: <Blog/>
+                  },
+                  {
+                        path: '/profile',
+                        element: <UpdateProfile/>
+                        
                   }
                   
             ]

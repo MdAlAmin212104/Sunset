@@ -12,7 +12,7 @@ const SingleInfo = () => {
       const { image, title, description, features, distance, duration, price } = singleCart;
 
       return (
-            <div className="card lg:card-side bg-base-100 shadow-xl my-8">
+            <div className="card bg-base-100 shadow-xl my-8">
                   <figure className=''><img src={image} alt="Album" className='w-[3703px]'/></figure>
                   <div className="card-body">
                         <h2 className="card-title text-4xl font-bold">{title}</h2>

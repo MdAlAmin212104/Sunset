@@ -28,7 +28,7 @@ const Login = () => {
       const handleGoogleLogin = () => {
             googleLogin()
                   .then(res => {
-                        console.log(res.user);
+                        //console.log(res.user);
                         toast.success("Congratulation you success to login!")
                   })
                   .catch(error => toast.warn(error.message))

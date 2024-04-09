@@ -25,7 +25,7 @@ const Register = () => {
       } = useForm();
 
       const onSubmit = (data) => {
-            const { password, email } = data;
+            const { password, email, name, photo } = data;
             const regex = /^(?=(.*[A-Z]){2})(?=(.*[a-z]){2}).{6,}$/
             if (!regex.test(password)) {
                   toast.warning('Your password must be at least 6 characters and minimum 2 uppercase letters and 2 lowercase letters');
@@ -33,7 +33,9 @@ const Register = () => {
             }
             
             createUserInEmail(email, password)
-                  .then(() => toast.success("Congratulation you success to Register!"))
+                  .then(() => {
+                        toast.success("Congratulation you success to Register!")
+                  })
                   .catch(errors => toast.warn(errors.message))
       }
 
