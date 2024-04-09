@@ -10,6 +10,7 @@ import Register from "../Pages/Register/Register";
 import Services from "../Pages/Servicess/Servicess";
 import Blog from "../Pages/Blog/Blog";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 
 
@@ -33,7 +34,7 @@ export const router = createBrowserRouter([
                   },
                   {
                         path: '/card/:id',
-                        element: <SingleInfo />,
+                        element: <PrivateRoute><SingleInfo /></PrivateRoute>,
                         loader: () => fetch('/hotel.json')
                   },
                   {
@@ -54,7 +55,7 @@ export const router = createBrowserRouter([
                   },
                   {
                         path: '/profile',
-                        element: <UpdateProfile/>
+                        element: <PrivateRoute><UpdateProfile/></PrivateRoute>
                         
                   }
                   

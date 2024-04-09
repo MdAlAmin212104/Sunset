@@ -27,7 +27,6 @@ const Provider = ({ children }) => {
             return signOut(auth)
       }
 
-      //console.log(user.displayName);
 
       const profileUpdate = (name, photo) => {
             return updateProfile(auth.currentUser, {
@@ -45,8 +44,6 @@ const Provider = ({ children }) => {
                   unSubscribe()
             };
       }, [])
-
-      //console.log(user.displayName);
 
 
       const userInfo = {

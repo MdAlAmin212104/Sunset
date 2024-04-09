@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { IoMdEye } from "react-icons/io";
 import { FaEyeSlash } from "react-icons/fa6";
@@ -12,6 +12,9 @@ const Login = () => {
       const [showPassword, setShowPassword] = useState(false);
 
       const { userLogIn, googleLogin, githubLogin } = useContext(AuthProvider)
+      const location = useLocation();
+      const navigate = useNavigate();
+      const from = location?.state || "/";
 
       const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -22,7 +25,10 @@ const Login = () => {
             const { password, email } = data;
             
             userLogIn(email, password)
-                  .then(() => toast.success("Congratulation you success to login!"))
+                  .then(() => {
+                        toast.success("Congratulation you success to login!")
+                        navigate(from)
+                  })
                   .catch(errors => toast.warn(errors.message))
       }
 
@@ -31,6 +37,7 @@ const Login = () => {
                   .then(res => {
                         //console.log(res.user);
                         toast.success("Congratulation you success to login!")
+                        navigate(from)
                   })
                   .catch(error => toast.warn(error.message))
             
@@ -39,8 +46,8 @@ const Login = () => {
       const handleGithubLogin = () => {
             githubLogin()
                   .then(res => {
-                        console.log(res.user);
                         toast.success("Congratulation you success to login!")
+                        navigate(from)
                   })
                   .catch(error => toast.warn(error.message))
       }
